@@ -5,10 +5,18 @@
 // If nth is not positive, return -1
 // Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0
 
-
 // Write the function to find the findDigit obtained.
-var findDigit = function(num, nth){
-     //your code here
+var findDigit = function (num, nth) {
+  num = String(Math.abs(num));
+  if (nth <= 0) {
+    return -1;
   }
+  if (num.length < nth) {
+    return 0;
+  } else {
+    val = num[num.length - nth];
+    return Number(val);
+  }
+};
 
 //Use SpecRunner to check the Test Cases.
